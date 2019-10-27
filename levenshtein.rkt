@@ -1,20 +1,20 @@
 #lang racket
 (define (calculate texto1 texto2 tamA tamB)
     (cond
-        [(zero? a) b]
-        [(zero? b) a]
-        [(equal? (string-ref texto1 tamA) (string-ref texto2 tamB)) (calculate texto1 texto2 (sub1 tamA) (sub1 tamB))]
+        [(zero? tamA) tamB]
+        [(zero? tamB) tamA]
+        [(equal? (string-ref texto1 (- tamA 1)) (string-ref texto2 (- tamB 1))) (calculate texto1 texto2 (sub1 tamA) (sub1 tamB))]
         [else (min (add1 (calculate texto1 texto2 tamA (sub1 tamB))) (add1 (calculate texto1 texto2 (sub1 tamA) tamB)) (add1 (calculate texto1 texto2 (sub1 tamA) (sub1 tamB))))]
-    )
-)
+        )
+  )
 
 (define (levenshtein texto1 texto2)
-    (let [a (string-length texto1)])
-    (let [b (string-length texto2)])
-    (let [c (calculate texto1 texto2 a b)])
+    (define a (string-length texto1))
+    (define b (string-length texto2))
+    (define c (calculate texto1 texto2 a b))
     (cond
-        [(< a b) (/ c b)]
-        [(< b a) (/ c a)]
+        [(< a b) (exact->inexact(/ c b))]
+        [else (exact->inexact (/ c a))]
     )
 )
     

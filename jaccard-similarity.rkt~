@@ -6,5 +6,5 @@
   (define lst1 (string-split texto2))
   (define unionlst (set-union lst0 lst1))
   (define intersectlst (set-intersect lst0 lst1))
-  (exact->inexact(/ (length intersectlst) (length unionlst)))
+  (/ (length intersectlst) (length unionlst))
 )
