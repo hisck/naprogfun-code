@@ -19,7 +19,7 @@
   (define lst1 (string-split texto2)) ;;transformação do segundo texto em uma lista de strings
   (define unionlst (set-union lst0 lst1)) ;;realização da união entre as duas listas
   (define intersectlst (set-intersect lst0 lst1)) ;;realização da interseçao entre as duas listas
-  (exact->inexact(/ (length intersectlst) (length unionlst))) ;;calculo do valor do coeficiente de jaccard
+  (exact->inexact(/ (length intersectlst) (length unionlst))) ;;calculo do valor do coeficiente de jaccard  
 )
 
 (define (executa-testes . testes)
