@@ -5,6 +5,11 @@
 (require memoize)
 (require memo)
 
+;; Jaccard Similarity
+
+;; String -> Set (List) de Strings -> valor
+;; Devolve um valor entre 0 e 1, onde 0 são duas Strings totalmente diferentes e 1 duas strings identicas.
+
 (define jaccard-similarity-tests
   (test-suite
    "jaccard-similarity-tests"

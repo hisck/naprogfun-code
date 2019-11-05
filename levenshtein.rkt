@@ -4,6 +4,14 @@
 (require memoize)
 (require memo)
 
+;; Levenshtein
+;; Algorítmo que calcula o quão parecidas duas strings são através da similaridade entre caracteres
+;; se os caracteres forem diferentes, ele considera ou como inserção, deleção ou substituição
+;; String - > Valor
+;; Devolve um valor inteiro, que representa o número de operações feitas (deleção, inserção ou substituição)
+;; A função calculate calcula um coeficiente entre 0 e 1, onde 1 representa que duas strings são exatamente as mesmas e 0 são totalmente diferentes
+;; Calculate recebe duas strings e os tamanhos das mesmas, para calculal o coeficiente entre 0 e 1.
+
 (define levenshtein-tests
   (test-suite
    "levenshtein-tests"
